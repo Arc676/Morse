@@ -22,6 +22,9 @@
 // Morse code translations of alphanumeric characters
 const char* morse[36];
 
+// Lookup table for alphanumeric translations of Morse code
+const char chars[63];
+
 /**
  * Converts a message to morse code
  * @param message Message text
