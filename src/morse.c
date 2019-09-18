@@ -100,3 +100,7 @@ char* morseToText(const char* message, int len) {
 	memcpy(ret, output, strlen(output));
 	return ret;
 }
+
+void stdfree(char* str) {
+	free(str);
+}

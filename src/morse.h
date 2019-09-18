@@ -41,4 +41,10 @@ char* textToMorse(const char* message, int len);
  */
 char* morseToText(const char* message, int len);
 
+/**
+ * Alias for standard memory deallocation for Python frontend
+ * @str String to deallocate
+ */
+void stdfree(char* str);
+
 #endif
