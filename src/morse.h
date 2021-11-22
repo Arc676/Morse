@@ -1,4 +1,4 @@
-//Copyright (C) 2018  Arc676/Alessandro Vinciguerra <alesvinciguerra@gmail.com>
+//Copyright (C) 2018-21 Arc676/Alessandro Vinciguerra <alesvinciguerra@gmail.com>
 
 //This program is free software: you can redistribute it and/or modify
 //it under the terms of the GNU General Public License as published by
@@ -6,11 +6,11 @@
 
 //This program is distributed in the hope that it will be useful,
 //but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //GNU General Public License for more details.
 
 //You should have received a copy of the GNU General Public License
-//along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #ifndef MORSE_H
 #define MORSE_H
@@ -20,10 +20,10 @@
 #include <string.h>
 
 // Morse code translations of alphanumeric characters
-const char* morse[36];
+extern const char* morse[36];
 
 // Lookup table for alphanumeric translations of Morse code
-const char chars[63];
+extern const char chars[63];
 
 /**
  * Converts a message to morse code
