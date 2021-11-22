@@ -1,4 +1,4 @@
-//Copyright (C) 2018  Arc676/Alessandro Vinciguerra <alesvinciguerra@gmail.com>
+//Copyright (C) 2018-21 Arc676/Alessandro Vinciguerra <alesvinciguerra@gmail.com>
 
 //This program is free software: you can redistribute it and/or modify
 //it under the terms of the GNU General Public License as published by
@@ -6,11 +6,11 @@
 
 //This program is distributed in the hope that it will be useful,
 //but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //GNU General Public License for more details.
 
 //You should have received a copy of the GNU General Public License
-//along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include "morse.h"
 
@@ -34,7 +34,7 @@ const char chars[63] = {
 	'3', 0, 0, 0, '2', 0, '1'
 };
 
-char* textToMorse(const char* message, int len) {
+char* textToMorse(const char* message, const int len) {
 	char output[7 * len];
 	memset(output, 0, sizeof(output));
 	int pos = 0;
@@ -56,13 +56,14 @@ char* textToMorse(const char* message, int len) {
 			pos += strlen(m) + 3;
 		}
 	}
-	char* ret = malloc(strlen(output) + 1);
-	memcpy(ret, output, strlen(output));
-	ret[strlen(output)] = 0;
+	int olen = strlen(output);
+	char* ret = malloc(olen + 1);
+	memcpy(ret, output, olen);
+	ret[olen] = 0;
 	return ret;
 }
 
-char* morseToText(const char* message, int len) {
+char* morseToText(const char* message, const int len) {
 	char output[len];
 	memset(output, 0, sizeof(output));
 	int mpos = 0;
@@ -96,8 +97,9 @@ char* morseToText(const char* message, int len) {
 		}
 		bit <<= 1;
 	}
-	char* ret = malloc(strlen(output));
-	memcpy(ret, output, strlen(output));
+	int olen = strlen(output);
+	char* ret = malloc(olen);
+	memcpy(ret, output, olen);
 	return ret;
 }
 
